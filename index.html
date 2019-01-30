@@ -18,7 +18,7 @@
             <a class="navbar-item" href="index.html">
                 <img src="https://banner2.kisspng.com/20180622/swk/kisspng-shadowrun-dragonfall-shadowrun-returns-logo-emble-5b2d942f197353.5222521815297137111043.jpg">
             </a>
-
+            <h1 class=title is-4 has-padding">Welcome Runners</h1>
             <div class="navbar-burger" id="burger_button">
                 <span></span>
                 <span></span>
@@ -34,7 +34,7 @@
                 <a href="home.html" class="navbar-item">Home</a>
                 <a class="navbar-item">Documentation</a>
                 <div class="navbar-item has-dropdown is-hoverable ">
-                    <a class="navbar-link">More</a>
+                    <a class="navbar-link" id="burger_more">More</a>
 
                     <div class="navbar-dropdown">
                         <a class="navbar-item">About</a>
@@ -59,18 +59,31 @@
         </div>
 
     </div>
+
 </nav>
+<hr class="navbar-divider"/>
 <!-- End of Header-->
+
+<!-- Content Div -->
+<div>
+
+</div>
 </body>
 
 <script>
     burgerButton = document.getElementById("burger_button");
     burgerMenu = document.getElementById("burger_menu");
+    burgerMore = document.getElementById("burger_more");
     burgerButton.onclick = () => {
         if (burgerMenu.classList.contains("is-active")) {
             burgerMenu.classList.remove("is-active");
         } else {
             burgerMenu.classList.add("is-active");
+        }
+        if (burgerMore.classList.contains("is-active")) {
+            burgerMore.classList.remove("is-active");
+        } else {
+            burgerMore.classList.add("is-active");
         }
     }
 
