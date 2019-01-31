@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShadowRun</title>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	<script src="functions.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+
+</head>
+
+<body>
+<!-- Header-->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://www.youtube.com/watch?v=rbus2UScWKc">
+                <img src="https://banner2.kisspng.com/20180622/swk/kisspng-shadowrun-dragonfall-shadowrun-returns-logo-emble-5b2d942f197353.5222521815297137111043.jpg">
+            </a>
+
+            <div class="navbar-burger" id="burger_button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+        <div class="navbar-menu" id="burger_menu">
+            <div class="navbar-start">
+                <a href="index.html" class="navbar-item">Home</a>
+                <a href="document.html" class="navbar-item">Documentation</a>
+                <div class="navbar-item has-dropdown is-hoverable ">
+                    <a class="navbar-link">More</a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">About</a>
+                        <a class="navbar-item">Jobs</a>
+                        <a class="navbar-item">Contact</a>
+                        <hr class="navbar-divider"/>
+                        <a class="navbar-item">Report an issue</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>
+<hr class="navbar-divider"/>
+<!-- End of Header-->
+<!-- Start of Documents -->
+	<div class="container">
+		<div class="columns">
+			<div class="column is-one-fifth">
+				<div class="select">
+					<select name="book" onchange="DispPDF(this.value)">
+						<option></option>
+						<option value="Chicago_Runner_Map.pdf"> Chicago Runner Map </option>
+						<option value="Chrome_Flesh_(Augmentations).pdf"> Chrome Flesh - Augmentations </option>
+						<option value="Core_Rulebook_(2nd_Printing).pdf"> Core Rulebook </option>
+						<option value="Data_Trails_(Matrix_Handbook).pdf"> Data trails - Matrix Handbook </option>
+						<option value="Forbidden_Arcana_(Advanced_Magic_Rules).pdf"> Forbidden Arcana - Advanced Magic Rules </option>
+						<option value="Gear_Cards_Series_1.pdf"> Gear Cards Series 1 </option>
+						<option value="Gun_H(e)aven_3_Weapon_Cards.pdf"> Gun Heaven 3 Weapon Cards </option>
+						<option value="Howling_Shadows_(Critter_Bestiary).pdf"> howling Shadows - Critter Bestiary </option>
+						<option value="Kill_Code_(Advanced_Matrix_Rules)_(Player_Allowed_Qualities).pdf"> Kill Code - Advanced Matrix Rules </option>
+						<option value="Market_Panic.pdf"> Market Panic </option>
+						<option value="Rigger_5.0.pdf"> Rigger 5.0 </option>
+						<option value="Run_&_Gun_(Annotated).pdf"> Run & Gun </option>
+						<option value="Run-Faster.pdf"> Run Faster </option>
+						<option value="Shadowrun_5e_Errata.pdf"> Shadowrun 5e Errata </option>
+						<option value="Street_Grimoire_(Annotated).pdf"> Street Grimoire </option>
+						<option value="Street_Lethal_(Advanced_Combat_Rules).pdf"> Street Lethal - Advanced Combat Rules </option>
+						<option value="Superbook_(Statblocks_no_details).pdf"> Superbook - Stateblocks no details  </option>
+					</select>
+				</div>
+				
+			</div>
+
+			<br/>
+			<div class="column">
+				<div class="container" id="viewPDF"></div>
+			</div>
+		</div>
+	</div>
+<!-- End of Documents -->
+</body>
+
+<style>
+.pdfobject-container { height: 70rem; border: 1rem solid rgba(0,0,0,.1);}
+
+
+  
+  
+</style>
+
+<script>
+function DispPDF(id) {
+	console.log(id);
+	PDFObject.embed("pdf/"+id, "#viewPDF");
+	
+}
+
+    burgerButton = document.getElementById("burger_button");
+    burgerMenu = document.getElementById("burger_menu");
+    burgerButton.onclick = () => {
+        if (burgerMenu.classList.contains("is-active")) {
+            burgerMenu.classList.remove("is-active");
+        } else {
+            burgerMenu.classList.add("is-active");
+        }
+    }
+</script>
+
+</html>
+
+<!-- 
+<ul>
+					<li> <label class="button" id="Run-Faster.pdf" onclick="DispPDF(this.id)"> Run Faster </label></li>
+					<br/>
+					<li> <label class="button" id="Rigger-5.0.pdf" onclick="DispPDF(this.id)"> Rigger-5.0 </label></li>
+				
+				</ul>
+-->
